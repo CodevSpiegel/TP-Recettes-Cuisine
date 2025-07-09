@@ -34,7 +34,7 @@ else {
             $class_button_3 = "button-primary";
             break;
         default:
-            # code...
+            $class_button_0 = "button-primary";
             break;
     }
 
