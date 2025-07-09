@@ -115,7 +115,7 @@ if ( isset($_POST['valid_button']) ) {
                 </div>
                 <div>
                     <label for="description">Description :</label>
-                    <textarea id="description" name="description"><?= $description ?></textarea>
+                    <textarea id="description" name="description" required><?= $description ?></textarea>
                 </div>
                 <div>
                     <label for="duration">Durée :</label>
