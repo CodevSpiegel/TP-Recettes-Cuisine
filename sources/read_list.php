@@ -11,14 +11,22 @@ $class_button_2 = "button-secondary";
 $class_button_3 = "button-secondary";
 
 
-if ( isset($_POST['list']) AND $_POST['list'] !== "all" ) {
+if ( !isset($_POST['list']) || $_POST['list'] === "all") {
 
+    $sql = "SELECT * FROM recipes ORDER BY difficulty, name";
+
+    $req = $bdd->prepare($sql);
+    $req->execute();
+
+    $class_button_0 = "button-primary";
+
+}
+else {
     $difficulty = $_POST['list'];
     switch ($difficulty) {
         case 'facile':
             $class_button_1 = "button-primary";
             break;
-
         case 'normale':
             $class_button_2 = "button-primary";
             break;
@@ -37,15 +45,6 @@ if ( isset($_POST['list']) AND $_POST['list'] !== "all" ) {
     $req = $bdd->prepare($sql);
     $req->bindParam(":difficulty", $difficulty, PDO::PARAM_STR);
     $req->execute();
-
-}
-else {
-    $sql = "SELECT * FROM recipes ORDER BY difficulty, name";
-
-    $req = $bdd->prepare($sql);
-    $req->execute();
-
-    $class_button_0 = "button-primary";
 }
 
 
