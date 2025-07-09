@@ -66,7 +66,7 @@ if(!$recipe) {
             <div>Durée : <?= $recipe['duration'] ?></div>
             <div>Difficulté : <?= $recipe['difficulty'] ?></div>
             <div>
-                Ingredients :
+                Liste des ingredients :
                 <ul>
 <?php foreach ($ingredients as $ingredient):
 
